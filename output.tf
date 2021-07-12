@@ -9,3 +9,7 @@ output "dns_privado" {
   # [for temp in list : output]
   value = [for bar in var.dns_zone_private_name : upper(bar)]
 }
+
+output "network_security_group" {
+  value = azurerm_network_security_group.nsg.id
+}

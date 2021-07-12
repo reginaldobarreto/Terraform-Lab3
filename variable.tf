@@ -12,3 +12,11 @@ variable "location" {
 variable "dns_zone_private_name" {
   type = list(string)
 }
+
+variable "network_security_group_name" {
+  default = "nsgbarreto"
+}
+
+variable "nsgrules" {
+  type = any
+}
