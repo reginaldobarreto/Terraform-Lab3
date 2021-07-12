@@ -6,3 +6,9 @@ resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
 }
+
+resource "azurerm_private_dns_zone" "dns_zone_private" {
+  count               = length(var.dns_zone_private_name)
+  name                = var.dns_zone_private_name[count.index]
+  resource_group_name = azurerm_resource_group.rg.name
+}

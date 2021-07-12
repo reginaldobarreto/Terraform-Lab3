@@ -8,3 +8,7 @@ variable "resource_group_name" {
 variable "location" {
   default = "East US"
 }
+
+variable "dns_zone_private_name" {
+  type = list(string)
+}
